@@ -49,3 +49,7 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, "Helvetica Neue", Arial;
 }
+
+html {
+  scroll-behavior: smooth;
+}

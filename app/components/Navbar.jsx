@@ -12,11 +12,12 @@ const Navbar = () => {
   // Navigation Items
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Clients", href: "/clients" },
-    { name: "Projects", href: "/projects" },
-    { name: "Career", href: "/career" },
+    { name: "Services", href: "/#services" },
+    { name: "Mission & Vision", href: "/#missionandvission" },
+    { name: "Clients", href: "/#clients" },
+    { name: "Projects", href: "/#projects" },
     { name: "About Us", href: "/about" },
+    { name: "Contact Us", href: "/#contact-us" },
   ];
 
   // Handle Scroll for slight shadow effect

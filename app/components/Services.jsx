@@ -131,7 +131,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen light:bg-slate-50 font-sans">
+    <div id="services" className="min-h-screen light:bg-slate-50 font-sans">
       <style>
         {`
           @keyframes fadeInUp {
@@ -177,12 +177,12 @@ export default function App() {
           ))}
         </div>
 
-        <div className="mt-20 text-center">
+        {/* <div className="mt-20 text-center">
           <button className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-slate-800 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900">
             View All Services
             <Layers className="ml-2 w-5 h-5" />
           </button>
-        </div>
+        </div> */}
       </section>
     </div>
   );
