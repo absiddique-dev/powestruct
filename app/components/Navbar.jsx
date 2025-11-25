@@ -39,7 +39,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Powerstruct Logo"
-              className="hidden lg:block h-11 w-auto mr-2 object-contain rounded-xs"
+              className="hidden lg:block h-8 w-auto mr-2 object-contain rounded-xs"
               onError={(e) => {
                 e.target.style.display = "none";
               }}
@@ -47,9 +47,6 @@ const Navbar = () => {
             <div className="flex flex-col leading-none ">
               <span className="font-extrabold text-md lg:text-xl light:text-[#242424] tracking-tighter poppins">
                 POWER<span className="text-[#095C9E]">STRUCT</span>
-              </span>
-              <span className="text-[8px] lg:text-[10px] font-semibold tracking-widest text-[#14bcff] uppercase">
-                Engineering Pvt. Ltd.
               </span>
             </div>
           </a>

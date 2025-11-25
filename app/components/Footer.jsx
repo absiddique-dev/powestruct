@@ -39,9 +39,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col leading-5">
                 <span className="uppercase montserrat">Powerstruct</span>
-                <span className="text-xs tracking-wider">
-                  Engineering Pvt Ltd
-                </span>
+                <span className="text-xs tracking-wider">Pvt Ltd</span>
               </div>
             </div>
             <p className="light:text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
@@ -122,7 +120,7 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-sm light:text-slate-600 dark:text-slate-400">
                 <MapPin size={18} className="text-orange-500 shrink-0 mt-0.5" />
                 <span>
-                  Powerstruct Engineering Pvt. Ltd.
+                  Powerstruct Pvt. Ltd.
                   <br />
                   Kharupetia, Darrang, Assam
                   <br />

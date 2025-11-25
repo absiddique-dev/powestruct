@@ -29,11 +29,15 @@ const NotFoundPage = () => {
         <div className="mb-8 flex justify-center relative">
           <div className="absolute inset-0 bg-orange-100 dark:bg-orange-900/20 rounded-full blur-xl transform scale-150" />
           <div className="relative bg-white  p-2 rounded-full shadow-2xl dark:border-slate-800">
+<<<<<<< HEAD
             <img
               src={logo}
               alt="powerstruct-logo"
               className="aspect-square rounded-full w-20"
             />
+=======
+            <img src={logo} className="aspect-square rounded-full w-20" />
+>>>>>>> c075c481394de51cfe1021f60020e062460d96b8
           </div>
         </div>
 
