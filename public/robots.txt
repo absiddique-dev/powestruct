@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.powerstruct.com
+
+# Sitemaps
+Sitemap: https://www.powerstruct.com/sitemap.xml

@@ -75,13 +75,13 @@ const ClientLogo = ({ client }) => {
       </div>
 
       <div className="flex flex-col items-center gap-4 transition-all duration-300 group-hover:scale-105 z-10">
-        <div className="p-2 shadow-2xl rounded-full bg-slate-50 dark:bg-slate-700/50 group-hover:bg-white dark:group-hover:bg-slate-700 shadow-sm group-hover:shadow-md transition-all duration-300">
+        <div className="p-2 shadow-2xl rounded-full bg-white group-hover:bg-white dark:group-hover:bg-slate-400 shadow-sm group-hover:shadow-md transition-all duration-300">
           <div className="w-12 h-12 md:w-16 md:h-16">
             <img src={logo} className="w-full rounded-full" />
           </div>
         </div>
 
-        <span className="text-center font-bold light:text-slate-400 dark:text-slate-500 light:group-hover:text-slate-800 dark:group-hover:text-slate-200 text-sm md:text-base transition-colors duration-300">
+        <span className="text-center font-bold light:group-hover:text-slate-800 dark:group-hover:text-slate-200 text-sm md:text-base transition-colors duration-300">
           {client.name}
         </span>
       </div>
@@ -95,23 +95,23 @@ const Clients = () => {
   return (
     <section
       id="clients"
-      className="py-20 light:bg-slate-50 dark:bg-slate-900 transition-colors duration-300 px-4 md:px-8 lg:px-[100px]"
+      className="py-20 transition-colors duration-300 px-4 md:px-8 lg:px-[100px]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold uppercase tracking-wide mb-6 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full light:bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold uppercase tracking-wide mb-6 shadow-sm">
             <Handshake size={14} className="text-orange-500" />
             <span>Trusted Partnerships</span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-extrabold light:text-slate-900 dark:text-white mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
             Building the Future with <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-600 to-amber-600 dark:from-orange-400 dark:to-amber-400">
               Industry Leaders
             </span>
           </h2>
 
-          <p className="light:text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed">
             We are proud to collaborate with leading organizations and
             government bodies to deliver world-class infrastructure solutions
             across the nation.

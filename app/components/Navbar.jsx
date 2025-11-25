@@ -19,7 +19,6 @@ const Navbar = () => {
     { name: "Contact Us", href: "/#contact-us" },
   ];
 
-  // Handle Scroll for slight shadow effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -34,7 +33,7 @@ const Navbar = () => {
         scrolled ? "shadow-lg" : ""
       }`}
     >
-      <div className=" py-4 px-4 md:px-8 lg:px-[100px] border-b border-gray-200">
+      <div className=" py-2 px-4 md:px-8 lg:px-[100px] border-b border-gray-200">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <a href="/" className="shrink-0 flex items-center">
             <img
@@ -46,10 +45,10 @@ const Navbar = () => {
               }}
             />
             <div className="flex flex-col leading-none ">
-              <span className="font-extrabold text-lg lg:text-2xl light:text-[#242424] tracking-tighter poppins">
+              <span className="font-extrabold text-md lg:text-xl light:text-[#242424] tracking-tighter poppins">
                 POWER<span className="text-[#095C9E]">STRUCT</span>
               </span>
-              <span className="text-xs font-semibold tracking-widest text-[#14bcff] uppercase">
+              <span className="text-[8px] lg:text-[10px] font-semibold tracking-widest text-[#14bcff] uppercase">
                 Engineering Pvt. Ltd.
               </span>
             </div>

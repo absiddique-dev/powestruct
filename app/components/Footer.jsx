@@ -10,7 +10,13 @@ import {
   ArrowRight,
   HardHat,
 } from "lucide-react";
-import { contactMail, contactNo, logo } from "@/lib/config";
+import {
+  companyName,
+  contactMail,
+  contactNo,
+  logo,
+  pageDescription,
+} from "@/lib/config";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,9 +41,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="light:text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-              Empowering the nation through robust engineering and
-              infrastructure solutions. Building trust with every project we
-              deliver.
+              {pageDescription}
             </p>
             <div className="flex gap-4">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, index) => (
@@ -57,22 +61,27 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-3">
-              {["Home", "About Us", "Projects", "Careers", "Contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="group flex items-center text-sm light:text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
-                    >
-                      <ArrowRight
-                        size={14}
-                        className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-orange-500"
-                      />
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                { name: "Home", url: "/" },
+
+                { name: "Projects", url: "/projects" },
+                { name: "Services", url: "/services" },
+                { name: "Clients", url: "/#clients" },
+                { name: "About Us", url: "/about" },
+              ].map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.url}
+                    className="group flex items-center text-sm light:text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
+                  >
+                    <ArrowRight
+                      size={14}
+                      className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-orange-500"
+                    />
+                    {item.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -118,7 +127,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-sm light:text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
                 <Phone size={18} className="text-orange-500 shrink-0" />
-                <a href="tel:+919876543210">+91 {contactNo}</a>
+                <a href={"tel:+91" + contactNo}>+91 {contactNo}</a>
               </li>
               <li className="flex items-center gap-3 text-sm light:text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
                 <Mail size={18} className="text-orange-500 shrink-0" />
@@ -130,24 +139,23 @@ const Footer = () => {
 
         <div className="border-t light:border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm light:text-slate-500 dark:text-slate-500">
-            &copy; {currentYear} Powerstruct Engineering Pvt. Ltd. All rights
-            reserved.
+            &copy; {currentYear} {companyName} All rights reserved.
           </p>
           <div className="flex gap-6 text-sm light:text-slate-500 dark:text-slate-500">
             <a
-              href="#"
+              href="/privacy-policy"
               className="hover:text-slate-400 dark:hover:text-white transition-colors"
             >
               Privacy Policy
             </a>
             <a
-              href="#"
+              href="/terms-of-service"
               className="hover:text-slate-400 dark:hover:text-white transition-colors"
             >
               Terms of Service
             </a>
             <a
-              href="#"
+              href="/sitemap.xml"
               className="hover:text-slate-400 dark:hover:text-white transition-colors"
             >
               Sitemap

@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { companyName } from "@/lib/config";
 
 const StatBlock = ({ icon: Icon, value, label }) => (
   <div className="flex items-center gap-4 p-6 light:bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
@@ -112,12 +113,11 @@ const AboutPage = () => {
                   </h2>
                   <div className="space-y-6 light:text-slate-600 dark:text-slate-400 leading-relaxed">
                     <p>
-                      Powerstruct Pvt. Ltd. stands at the forefront of the
-                      region's growing power and construction sectors. What
-                      began as a vision to bridge the infrastructure gap has
-                      evolved into a comprehensive engineering firm known for
-                      technical excellence and an unyielding commitment to
-                      quality.
+                      {companyName} stands at the forefront of the region's
+                      growing power and construction sectors. What began as a
+                      vision to bridge the infrastructure gap has evolved into a
+                      comprehensive engineering firm known for technical
+                      excellence and an unyielding commitment to quality.
                     </p>
                     <p>
                       Through our strategic partnership with{" "}

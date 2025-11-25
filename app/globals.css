@@ -32,17 +32,6 @@ body {
   font-family: var(--font-geist-poppins) !important;
 }
 
-:root {
-  --bg: #ffffff;
-  --text: #111827;
-}
-
-/* when theme provider adds "dark" class */
-.dark {
-  --bg: #000000;
-  --text: #e6eef8;
-}
-
 body {
   background: var(--bg);
   color: var(--text);
