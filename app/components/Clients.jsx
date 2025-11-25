@@ -10,6 +10,7 @@ import {
   Wifi,
   Briefcase,
 } from "lucide-react";
+import { logo } from "@/lib/config";
 
 const clients = [
   {
@@ -63,23 +64,21 @@ const clients = [
 ];
 
 const ClientLogo = ({ client }) => {
-  const Icon = client.icon;
-
   return (
-    <div className="group relative flex flex-col items-center justify-center p-6 md:p-8 light:bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl transition-all duration-300 hover:shadow-xl hover:border-orange-200 dark:hover:border-orange-500/30 hover:-translate-y-1">
-      <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+    <div className="group relative flex flex-col items-center justify-center p-6 md:p-8 rounded-2xl transition-all duration-300 hover:shadow-xl hover:border-orange-200 dark:hover:border-orange-500/30 hover:-translate-y-1 overflow-hidden border border-slate-200">
+      <div className="absolute inset-0 bg-[url('/assets/graphics/01.png')] bg-cover bg-center opacity-[0.2]  pointer-events-none" />
+
+      <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0 z-10">
         <span className="text-[10px] font-bold tracking-wider text-orange-600 dark:text-orange-300 bg-orange-50 dark:bg-orange-500/10 px-2 py-1 rounded-full uppercase border border-orange-100 dark:border-orange-500/20">
           {client.type}
         </span>
       </div>
 
-      <div className="flex flex-col items-center gap-4 transition-all duration-300 group-hover:scale-105">
-        <div
-          className={`p-4 rounded-full bg-slate-50 dark:bg-slate-700/50 group-hover:bg-white dark:group-hover:bg-slate-700 shadow-sm group-hover:shadow-md transition-all duration-300`}
-        >
-          <Icon
-            className={`w-8 h-8 md:w-10 md:h-10 ${client.color} opacity-70 group-hover:opacity-100 transition-opacity`}
-          />
+      <div className="flex flex-col items-center gap-4 transition-all duration-300 group-hover:scale-105 z-10">
+        <div className="p-2 shadow-2xl rounded-full bg-slate-50 dark:bg-slate-700/50 group-hover:bg-white dark:group-hover:bg-slate-700 shadow-sm group-hover:shadow-md transition-all duration-300">
+          <div className="w-12 h-12 md:w-16 md:h-16">
+            <img src={logo} className="w-full rounded-full" />
+          </div>
         </div>
 
         <span className="text-center font-bold light:text-slate-400 dark:text-slate-500 light:group-hover:text-slate-800 dark:group-hover:text-slate-200 text-sm md:text-base transition-colors duration-300">
@@ -87,7 +86,7 @@ const ClientLogo = ({ client }) => {
         </span>
       </div>
 
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-linear-to-r from-orange-500 to-amber-500 transition-all duration-300 group-hover:w-1/3 rounded-t-full opacity-0 group-hover:opacity-100 z-50" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-orange-500 to-amber-500 transition-all duration-300 group-hover:w-1/3 rounded-t-full opacity-0 group-hover:opacity-100 z-10" />
     </div>
   );
 };

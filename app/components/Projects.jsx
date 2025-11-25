@@ -71,7 +71,8 @@ const projectsData = [
     location: "Silchar",
     date: "2025",
     status: "Ongoing",
-    image: "https://placehold.co/600x400/94a3b8/ffffff?text=Civil+Works",
+    image:
+      "https://upmarketresearch.com/assets/images/post%20images/06/1179_Electricity%20Transmission%20Towers.jpg",
     description:
       "Foundation and structural engineering for a new heavy industry complex.",
   },
@@ -82,7 +83,9 @@ const ProjectCard = ({ project }) => (
     <div className="relative h-56 overflow-hidden">
       <div className="absolute inset-0 light:bg-slate-900/20 group-hover:bg-slate-900/0 transition-colors duration-500 z-10" />
       <img
-        src={project.image}
+        src={
+          "https://upmarketresearch.com/assets/images/post%20images/06/1179_Electricity%20Transmission%20Towers.jpg"
+        }
         alt={project.title}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
       />
@@ -164,10 +167,10 @@ const Projects = () => {
 
   return (
     <section
-      className="py-20 light:bg-white dark:bg-slate-950 transition-colors duration-300"
+      className="py-20 light:bg-white dark:bg-slate-950 transition-colors duration-300 px-4 md:px-8 lg:px-[100px]"
       id="projects"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-8">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold uppercase tracking-wide mb-4">

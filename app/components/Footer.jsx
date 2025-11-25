@@ -18,9 +18,9 @@ const Footer = () => {
   return (
     <footer
       id="contact-us"
-      className="light:bg-slate-50 dark:bg-slate-900 pt-16 pb-8 transition-colors duration-300 border-t border-slate-200 dark:border-slate-800"
+      className="light:bg-slate-50 dark:bg-slate-900 pt-16 pb-8 transition-colors duration-300 border-t border-slate-200 dark:border-slate-800 px-4 md:px-8 lg:px-[100px]"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center gap-2 light:text-slate-900 dark:text-white font-extrabold text-2xl tracking-tight">

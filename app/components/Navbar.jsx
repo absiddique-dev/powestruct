@@ -9,7 +9,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Navigation Items
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
