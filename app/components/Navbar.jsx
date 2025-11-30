@@ -14,8 +14,10 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Services", href: "/#services" },
     { name: "Mission & Vision", href: "/#missionandvission" },
-    { name: "Clients", href: "/#clients" },
     { name: "Projects", href: "/#projects" },
+    { name: "Clients", href: "/#clients" },
+    { name: "Team", href: "/team" },
+    { name: "Gallary", href: "/gallery" },
     { name: "About Us", href: "/about" },
     { name: "Contact Us", href: "/#contact-us" },
   ];
@@ -53,7 +55,7 @@ const Navbar = () => {
           </a>
 
           <div className="hidden md:flex items-center gap-8">
-            <nav className="flex space-x-8">
+            <nav className="flex space-x-8 items-center">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -64,7 +66,9 @@ const Navbar = () => {
                   <span className="absolute bottom-0 left-0 w-full h-1 bg-[#14bcff] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </Link>
               ))}
-              <ThemeToggle />
+              <div className="block h-10 w-16">
+                <ThemeToggle />
+              </div>
             </nav>
           </div>
 
@@ -75,7 +79,7 @@ const Navbar = () => {
               onPress={() => setIsOpen(!isOpen)}
               aria-label="Menu"
             >
-              {isOpen ? <X size={25} /> : <Menu size={25} />}
+              {isOpen ? <X size={25} /> : <Menu size={25} />} hh
             </Button>
           </div>
         </div>

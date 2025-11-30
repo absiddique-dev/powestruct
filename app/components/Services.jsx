@@ -1,87 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import {
-  ArrowRight,
-  Code2,
-  BarChart3,
-  Smartphone,
-  Globe2,
-  ShieldCheck,
-  PenTool,
-  Layers,
-  Zap,
-  Bolt,
-  TowerControl,
-  Landmark,
-  Settings,
-  Radio,
-  ClipboardCheck,
-  FileSearch,
-} from "lucide-react";
+import { ArrowRight, Layers, Zap } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@heroui/react";
-import { whatsappNo } from "@/lib/config";
-
-const servicesData = [
-  {
-    id: 1,
-    title: "Electrical Infrastructure Projects",
-    description:
-      "Expert execution of residential, commercial, and industrial electrical infrastructure projects with a strong focus on safety, compliance, and long-term reliability.",
-    icon: <Bolt className="w-6 h-6" />,
-    image:
-      "https://placehold.co/600x400/1e40af/ffffff?text=Electrical+Infrastructure",
-  },
-  {
-    id: 2,
-    title: "Transmission Tower Line & Foundation Construction",
-    description:
-      "Specialized construction of transmission tower lines, foundations, and structural components ensuring efficient power transmission and grid stability.",
-    icon: <TowerControl className="w-6 h-6" />,
-    image: "https://placehold.co/600x400/047857/ffffff?text=Transmission+Tower",
-  },
-  {
-    id: 3,
-    title: "Civil & Structural Engineering Works",
-    description:
-      "Comprehensive civil and structural engineering services including site development, RCC works, excavation, foundation design, and structural fabrication.",
-    icon: <Landmark className="w-6 h-6" />,
-    image:
-      "https://placehold.co/600x400/b91c1c/ffffff?text=Civil+%26+Structural",
-  },
-  {
-    id: 4,
-    title: "Power System Installation & Maintenance",
-    description:
-      "End-to-end power system installation, testing, commissioning, and maintenance ensuring uninterrupted and optimized power performance.",
-    icon: <Settings className="w-6 h-6" />,
-    image: "https://placehold.co/600x400/9333ea/ffffff?text=Power+System",
-  },
-  {
-    id: 5,
-    title: "Telecom Infrastructure Development",
-    description:
-      "Deployment of telecom towers, fiber network setup, and communication infrastructure for modern and scalable connectivity solutions.",
-    icon: <Radio className="w-6 h-6" />,
-    image: "https://placehold.co/600x400/0f766e/ffffff?text=Telecom",
-  },
-  {
-    id: 6,
-    title: "EPC & Turnkey Project Execution",
-    description:
-      "Complete EPC and turnkey solutions covering engineering, procurement, construction, and end-to-end project management for seamless delivery.",
-    icon: <ClipboardCheck className="w-6 h-6" />,
-    image: "https://placehold.co/600x400/ea580c/ffffff?text=EPC+Turnkey",
-  },
-  {
-    id: 7,
-    title: "Project Consultancy & Technical Support",
-    description:
-      "Professional project consultancy, planning assistance, and technical support to ensure efficient, safe, and cost-effective project execution.",
-    icon: <FileSearch className="w-6 h-6" />,
-    image: "https://placehold.co/600x400/374151/ffffff?text=Consultancy",
-  },
-];
+import { FILEPATH, whatsappNo } from "@/lib/config";
+import imdos from "@/lib/imdos";
+import useSWR from "swr";
+import ServiceCardSkeleton from "./skeletons/ServicesSkeleton";
 
 const ServiceCard = ({ service, index }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -104,16 +28,14 @@ const ServiceCard = ({ service, index }) => {
       <div className="relative h-48 overflow-hidden">
         <div className="absolute inset-0 bg-slate-900/10 z-10 transition-opacity duration-300 group-hover:opacity-0" />
         <img
-          src={service.image}
+          src={FILEPATH + service.image}
           alt={service.title}
           className={`
             w-full h-full object-cover transition-transform duration-700
             ${isHovered ? "scale-110" : "scale-100"}
           `}
         />
-        <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm p-2 rounded-xl shadow-sm text-slate-700">
-          {service.icon}
-        </div>
+        <div className="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur-sm p-2 rounded-xl shadow-sm text-slate-700"></div>
       </div>
 
       <div className="p-4">
@@ -155,6 +77,14 @@ export default function Services({ onlyServices }) {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const fetcher = async () => {
+    const data = await imdos.request(
+      "SELECT id, title, image, description FROM services"
+    );
+    return data;
+  };
+  const { data: servicesData } = useSWR("/servicesData", fetcher);
 
   return (
     <div
@@ -205,11 +135,17 @@ export default function Services({ onlyServices }) {
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesData
-            .slice(0, onlyServices ? 6 : servicesData.length)
-            .map((service, index) => (
-              <ServiceCard key={service.id} service={service} index={index} />
-            ))}
+          {servicesData?.length > 0 ? (
+            servicesData
+              ?.slice(0, onlyServices ? 6 : servicesData.length)
+              .map((service, index) => (
+                <ServiceCard key={service.id} service={service} index={index} />
+              ))
+          ) : (
+            <>
+              <ServiceCardSkeleton num={8} />
+            </>
+          )}
         </div>
 
         {onlyServices && (

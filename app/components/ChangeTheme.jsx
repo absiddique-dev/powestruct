@@ -20,7 +20,7 @@ export default function ThemeToggle() {
         isIconOnly
         onPress={() => setTheme(current === "light" ? "dark" : "light")}
         aria-pressed={current === "light"}
-        className="px-3 py-1 rounded"
+        className="px-3 py-1 rounded-full"
         aria-label="Toggle Theme"
       >
         {current === "light" ? (

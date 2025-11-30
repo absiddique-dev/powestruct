@@ -108,9 +108,7 @@ const AboutPage = () => {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <h2 className="text-3xl font-bold light:text-slate-900 dark:text-white mb-6">
-                    Our Story
-                  </h2>
+                  <h2 className="text-3xl font-bold mb-6">Our Story</h2>
                   <div className="space-y-6 light:text-slate-600 dark:text-slate-400 leading-relaxed">
                     <p>
                       {companyName} stands at the forefront of the region's
@@ -121,13 +119,11 @@ const AboutPage = () => {
                     </p>
                     <p>
                       Through our strategic partnership with{" "}
-                      <strong className="text-slate-900 dark:text-white">
-                        M/s Aminur Islam
-                      </strong>
-                      , we leverage deep local expertise alongside modern
-                      project management methodologies. This unique combination
-                      allows us to execute complex electrical, civil, and
-                      telecom projects with precision and speed.
+                      <strong>M/s Aminur Islam</strong>, we leverage deep local
+                      expertise alongside modern project management
+                      methodologies. This unique combination allows us to
+                      execute complex electrical, civil, and telecom projects
+                      with precision and speed.
                     </p>
                     <p>
                       Our foundation is built on three core pillars:{" "}
@@ -138,9 +134,9 @@ const AboutPage = () => {
                   </div>
                 </div>
                 <div className="relative">
-                  <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-slate-200">
+                  <div className="aspect-4/3 rounded-3xl overflow-hidden shadow-2xl bg-slate-200">
                     <img
-                      src="https://placehold.co/800x600/1e293b/cbd5e1?text=Infrastructure+Site"
+                      src="/assets/team/team.png"
                       alt="Powerstruct Site"
                       className="w-full h-full object-cover"
                     />
